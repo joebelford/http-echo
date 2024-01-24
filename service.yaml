@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: http-echo
+  labels:
+    app: http-echo
+  annotations: {}
+  namespace: default
+spec:
+  selector:
+    app: http-echo
+    # app.kubernetes.io/name: http-echo
+  ports:
+    - protocol: TCP
+      port: 5678
+      name: http-web
+  type: LoadBalancer
